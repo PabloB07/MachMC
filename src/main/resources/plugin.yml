@@ -1,0 +1,19 @@
+name: MachMC
+version: '1.0-SNAPSHOT'
+main: cl.xgamers.machMC.MachMC
+api-version: '1.21'
+prefix: MachMC
+authors: [ AeroSama ]
+description: MachMC, plugin para usar MACHPay Chile como medio de pago.
+website: mc.xgamers.cl
+depend: [LuckPerms, PlaceholderAPI]
+commands:
+  machmc:
+    description: Comando principal de MachMC.
+    usage: /machmc <help|reload|vip>
+    permission: machmc.use
+    permission-message: "§cNo tienes permiso para usar este comando."
+permissions:
+  machmc.use:
+    description: Permisos de administrador para MachMC
+    default: op

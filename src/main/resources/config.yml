@@ -1,0 +1,41 @@
+# Modo de operación: development o production
+payku:
+  mode: development # Cambia a "production" para el entorno de producción
+  dev-public-key: "tu_public_key_de_desarrollo" # Clave pública para desarrollo
+  prod-public-key: "tu_public_key_de_produccion" # Clave pública para producción
+  endpoint: "https://des.payku.cl/api/transaction" # Endpoint personalizado
+  payment-method: 1
+webhook:
+  port: 8080 # Puerto donde escuchará el webhook
+  secret: "asd123" # Clave secreta para validar el webhook
+
+urls:
+  success: "https://mc.xgamers.cl/success" # URL para éxito (puede ser informativa)
+  notify: "https://mc.xgamers.cl/notify"   # URL para recibir notificaciones de Payku
+
+messages:
+  payment-error: "<red>Error al generar el pago. Por favor, intenta nuevamente.</red>"
+  payment-link: "<green>Haz clic en el siguiente enlace para completar tu compra: <yellow><click:open_url:'%payment_url%'>Click aquí para pagar</click>.</yellow></green>"
+  payment-complete: "<green>¡Gracias por tu compra, <yellow>%player_name%</yellow>! Tu rango VIP ha sido activado.</green>"
+  discord-notification: "**%player_name% ha comprado el rango VIP: %vip_rank% por $%vip_price%!**" # Notificación de Discord
+
+gui:
+  title: "<green>Tienda VIP</green>"
+  size: 27
+
+vips:
+  vip1:
+    display-name: "<green>VIP</green>"
+    price: 1000
+    rank: "vip"
+    material: "DIAMOND"
+    lore:
+      - "<gray>Beneficios:</gray>"
+      - "<gray>- Acceso a /fly</gray>"
+      - "<gray>- Acceso a /emojis</gray>"
+
+pending-payments: {} # No modifiques esta sección manualmente
+pending-vips: {}     # No modifiques esta sección manualmente
+
+discord:
+  webhook-url: "https://discord.com/api/webhooks/1332913396462522459/VQucZC8ytyc6gB3_9m0lH8B8LMoY-oCVfs3fCshgcWkvIUWIZJ5cxD9Q4NgF4OA_76y2" # Webhook de Discord para notificaciones
